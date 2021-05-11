@@ -1,5 +1,5 @@
 const express = require('express')
-const https = require('https')
+const http = require('http')
 const app = express()
 require('dotenv').config()
 
@@ -39,7 +39,7 @@ app.post('/',(req,res)=>{
         auth : 'Thops:'+apiKey+''
     }
 
-    const request = https.request(url,options , (response) => {
+    const request = http.request(url,options , (response) => {
         
         if(response.statusCode===200){
             res.sendFile(__dirname + '/success.html')
