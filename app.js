@@ -11,15 +11,14 @@ app.get('/',(req,res)=>{
 })
 
 
-
 app.post('/',(req,res)=>{
    const fname = req.body.fname
    const lname = req.body.lname
    const email = req.body.email
 
       
-const apiKey = process.env.APIKEY
-const url =  process.env.URL
+   const apiKey = process.env.APIKEY
+   const url =  process.env.URL
 
     
     const data = {
@@ -41,7 +40,7 @@ const url =  process.env.URL
     }
 
     const request = https.request(url,options , (response) => {
-    
+        
         if(response.statusCode===200){
             res.sendFile(__dirname + '/success.html')
         }else{
@@ -53,11 +52,11 @@ const url =  process.env.URL
     
     request.write(jsonData)
     request.end()
-    console.log(request)
+    // console.log(request)
 })
 
 app.post('/fail.html',(req,res)  => {
-    res.redirect('/')
+    res.redirect('/')   
 })
 
 
