@@ -40,7 +40,7 @@ app.post('/',(req,res)=>{
         auth : 'Thops:'+apiKey+''
     }
 
-    const request = https.request(url,options , (response) => {
+    const request = https.request(url,options,(response) => {
         
         if(response.statusCode===200){
             res.sendFile(__dirname + '/success.html')
@@ -61,6 +61,4 @@ app.post('/fail.html',(req,res)  => {
 })
 
 
-app.listen(process.env.PORT || 3000,() => {
-    console.log('The server is running')
-})
+app.listen(process.env.PORT || 3000)

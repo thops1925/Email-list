@@ -9,6 +9,7 @@
   "author": "Christopher Lumen",
   "license": "ISC",
   "dependencies": {
+    "cluster": "^0.7.7",
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "nodemon": "^2.0.7"
